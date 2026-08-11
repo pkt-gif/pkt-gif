@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./assets/profile-banner.svg" alt="Park Gitae — Embedded Firmware Engineer" width="100%">
+  <img src="./assets/profile-banner.svg" alt="Park Kitae — Embedded Firmware Engineer" width="100%">
 </p>
 
 <div align="center">
