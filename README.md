@@ -20,9 +20,9 @@
 
 ## Engineering Focus
 
-| MCU CONTROL | REAL-TIME | INTERFACE | EXTENSION |
-|:---:|:---:|:---:|:---:|
-| `C` `STM32F4`<br>`HAL` `FSM` | `FreeRTOS`<br>`Task` `Mutex` | `CAN` `UART`<br>`I²C` `PWM` | `FPGA SoC`<br>`Edge AI` |
+| MCU FIRMWARE | REAL-TIME & I/O | SYSTEM EXTENSION |
+|:---:|:---:|:---:|
+| `C` `STM32F4`<br>`HAL` `FSM` | `FreeRTOS` `Task/Mutex`<br>`CAN` `UART` `I²C` `PWM` | `Edge AI`<br>`FPGA SoC` |
 
 > 상태와 메시지의 경계를 먼저 정의하고, 센서–판단–구동의 흐름을 실제 하드웨어에서 검증합니다.
 
@@ -34,21 +34,21 @@
 |:---|:---|
 | [![Object-detecting autonomous taxi demo](https://img.youtube.com/vi/wJaPBZJurDA/hqdefault.jpg)](https://www.youtube.com/watch?v=wJaPBZJurDA) | [![FreeRTOS autonomous robotaxi demo](https://img.youtube.com/vi/1cFvFcStp3M/hqdefault.jpg)](https://www.youtube.com/shorts/1cFvFcStp3M) |
 | `STM32F446RE` `FreeRTOS` `CAN`<br>`Raspberry Pi 4` `YOLO11n/NCNN` | `STM32F411RE` `FreeRTOS`<br>`UART` `PWM` `HC-SR04` |
-| **CORE**<br>객체 탐지 결과와 초음파 데이터를 결합해 `STOP / SLOW / GO` 주행 상태 제어 | **CORE**<br>센서 측정·자율주행 판단·수동 제어를 3개 Task로 분리 |
-| **IMPLEMENTED**<br>CAN 메시지·주행 FSM, 320×320 NCNN 모델, 차동 구동 로직 | **IMPLEMENTED**<br>`SensorTask / DriveTask / ManualTask`, Mutex 데이터 공유, P 제어 조향 |
-| **MY PART**<br>시스템 아키텍처, 교통 객체 6종 데이터셋, 센서 융합 | **SOLO PROJECT**<br>`manual_mode`로 자율주행과 Bluetooth 수동 명령의 실행 경로 분리 |
+| **CONTROL FLOW**<br>`YOLO/NCNN + Ultrasonic` → `STOP / SLOW / GO` | **TASK FLOW**<br>`SensorTask` → `Mutex` → `DriveTask` |
+| **IMPLEMENTED**<br>`CAN` · `Drive FSM` · `Differential Drive` | **IMPLEMENTED**<br>`P Control` · `UART ISR` · `AUTO / MANUAL` |
+| **MY PART**<br>`Architecture` · `6-class Data` · `Sensor Fusion` | **SOLO PROJECT**<br>센싱·판단·수동 제어를 3개 Task로 분리 |
 | [Repository ↗](https://github.com/pkt-gif/object-detecting-autonomous-taxi) · [Demo ▶](https://www.youtube.com/watch?v=wJaPBZJurDA) | [Repository ↗](https://github.com/pkt-gif/robotaxi) · [Demo ▶](https://www.youtube.com/shorts/1cFvFcStp3M) · [Autonomous ▶](https://www.youtube.com/shorts/8N2YOQ3bM_4) |
 
 ---
 
 ## Systems Portfolio
 
-| No. | PROJECT | WHAT I BUILT | STACK |
-|:---:|:---|:---|:---|
-| **03** | [STM32 Lift Controller](https://github.com/pkt-gif/stm32-elevator) | 키패드 인증, 스텝모터 승강, 포토인터럽터 상·하한 제한, UART 점검 명령 | `STM32` `UART` `Stepper` |
-| **04** | Mission Computer Fault-Response SoC | Heartbeat/Fault 입력에 따라 출력을 격리하는 Safety Controller IP의 4-state FSM, `SAFE_MODE` Latch, Manual Recovery | `MicroBlaze` `Verilog` `AXI4-Lite` |
-| **05** | [AXI4-Lite Vending Machine](https://github.com/pkt-gif/custom-vending-machine) | Master Interface의 5채널 Handshake, 버튼·스위치 UI, Basys 3 통합 | `Verilog` `FSM` `Vivado` |
-| **06** | [Smart Fish Tank](https://github.com/pkt-gif/Smart-fish-tank) | ADC 차분을 이용한 상대 탁도 상태 판정과 LCD·RGB LED 표시 | `ATmega128A` `ADC` `I²C` |
+| No. | PROJECT & STACK | IMPLEMENTATION FLOW |
+|:---:|:---|:---|
+| **03** | [STM32 Lift Controller](https://github.com/pkt-gif/stm32-elevator)<br><sub>`STM32` `UART` `Stepper`</sub> | `Keypad` → `Limit Sensing` → `Lift / Door Control` |
+| **04** | Mission Computer Safety SoC<br><sub>`MicroBlaze` `Verilog` `AXI4-Lite`</sub> | `Heartbeat / Fault` → **Safety Controller IP** → `Output Isolation`<br><sub>4-state FSM · SAFE_MODE Latch · Manual Recovery</sub> |
+| **05** | [AXI4-Lite Vending Machine](https://github.com/pkt-gif/custom-vending-machine)<br><sub>`Verilog` `FSM` `Vivado`</sub> | `Order` → `AXI Master` → `Stock / Dispense`<br><sub>5-channel Handshake · Basys 3 UI</sub> |
+| **06** | [Smart Fish Tank](https://github.com/pkt-gif/Smart-fish-tank)<br><sub>`ATmega128A` `ADC` `I²C`</sub> | `ADC Difference` → `Relative Turbidity` → `LCD / RGB LED` |
 
 <p align="center">
   <a href="https://www.youtube.com/watch?v=AVxfVoIqJPs">Lift Demo ▶</a> ·
