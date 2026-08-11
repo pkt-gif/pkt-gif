@@ -28,33 +28,31 @@
 
 ---
 
-## Featured Firmware
+## Built Systems
 
-| 01 · [Object-Detecting Autonomous Taxi](https://github.com/pkt-gif/object-detecting-autonomous-taxi) | 02 · [FreeRTOS Autonomous Robotaxi](https://github.com/pkt-gif/robotaxi) |
+| **01 · [Object-Detecting Taxi](https://github.com/pkt-gif/object-detecting-autonomous-taxi)**<br><sub>FIRMWARE + EDGE AI · TEAM</sub> | **02 · [FreeRTOS Robotaxi](https://github.com/pkt-gif/robotaxi)**<br><sub>REAL-TIME FIRMWARE · SOLO</sub> |
 |:---|:---|
-| [![Object-detecting autonomous taxi demo](https://img.youtube.com/vi/wJaPBZJurDA/hqdefault.jpg)](https://www.youtube.com/watch?v=wJaPBZJurDA) | [![FreeRTOS autonomous robotaxi demo](https://img.youtube.com/vi/1cFvFcStp3M/hqdefault.jpg)](https://www.youtube.com/shorts/1cFvFcStp3M) |
-| `STM32F446RE` `FreeRTOS` `CAN`<br>`Raspberry Pi 4` `YOLO11n/NCNN` | `STM32F411RE` `FreeRTOS`<br>`UART` `PWM` `HC-SR04` |
-| **CONTROL FLOW**<br>`YOLO/NCNN + Ultrasonic` → `STOP / SLOW / GO` | **TASK FLOW**<br>`SensorTask` → `Mutex` → `DriveTask` |
-| **IMPLEMENTED**<br>`CAN` · `Drive FSM` · `Differential Drive` | **IMPLEMENTED**<br>`P Control` · `UART ISR` · `AUTO / MANUAL` |
-| **MY PART**<br>`Architecture` · `6-class Data` · `Sensor Fusion` | **SOLO PROJECT**<br>센싱·판단·수동 제어를 3개 Task로 분리 |
+| [![Object-detecting taxi demo](https://img.youtube.com/vi/wJaPBZJurDA/hqdefault.jpg)](https://www.youtube.com/watch?v=wJaPBZJurDA) | [![FreeRTOS robotaxi demo](https://img.youtube.com/vi/1cFvFcStp3M/hqdefault.jpg)](https://www.youtube.com/shorts/1cFvFcStp3M) |
+| **FLOW**<br>`YOLO/NCNN + Ultrasonic` → `Drive FSM` → `STOP / SLOW / GO` | **FLOW**<br>`SensorTask` → `Mutex` → `DriveTask` |
+| **MY PART**<br>`Architecture` · `6-class Data` · `Sensor Fusion` | **BUILD**<br>`3 Tasks` · `P Control` · `AUTO / MANUAL` |
+| `STM32F446RE` `FreeRTOS` `CAN` `NCNN` | `STM32F411RE` `FreeRTOS` `UART` `PWM` |
 | [Repository ↗](https://github.com/pkt-gif/object-detecting-autonomous-taxi) · [Demo ▶](https://www.youtube.com/watch?v=wJaPBZJurDA) | [Repository ↗](https://github.com/pkt-gif/robotaxi) · [Demo ▶](https://www.youtube.com/shorts/1cFvFcStp3M) · [Autonomous ▶](https://www.youtube.com/shorts/8N2YOQ3bM_4) |
 
----
+| **03 · [STM32 Lift Controller](https://github.com/pkt-gif/stm32-elevator)**<br><sub>MCU CONTROL · TEAM</sub> | **04 · [Smart Fish Tank](https://github.com/pkt-gif/Smart-fish-tank)**<br><sub>EMBEDDED SENSING · TEAM</sub> |
+|:---|:---|
+| [![STM32 lift controller demo](https://img.youtube.com/vi/AVxfVoIqJPs/hqdefault.jpg)](https://www.youtube.com/watch?v=AVxfVoIqJPs) | [![Smart fish tank demo](https://img.youtube.com/vi/u2zzdcHJl2s/hqdefault.jpg)](https://www.youtube.com/watch?v=u2zzdcHJl2s) |
+| **FLOW**<br>`Keypad + Limit` → `Control FSM` → `Lift / Door` | **FLOW**<br>`LED ON/OFF ADC` → `Difference` → `Relative Turbidity` |
+| **MY PART**<br>`Motion Control` · `Safety Limit` · `LED/Buzzer` | **MY PART**<br>`ADC Measurement` · `3-Level Decision` · `Status Display` |
+| `STM32F411RE` `HAL` `UART/I²C` `Stepper` | `ATmega128A` `ADC` `I²C` `RGB LED` |
+| [Repository ↗](https://github.com/pkt-gif/stm32-elevator) · [Demo ▶](https://www.youtube.com/watch?v=AVxfVoIqJPs) | [Repository ↗](https://github.com/pkt-gif/Smart-fish-tank) · [Demo ▶](https://www.youtube.com/watch?v=u2zzdcHJl2s) |
 
-## Systems Portfolio
-
-| No. | PROJECT & STACK | IMPLEMENTATION FLOW |
-|:---:|:---|:---|
-| **03** | [STM32 Lift Controller](https://github.com/pkt-gif/stm32-elevator)<br><sub>`STM32` `UART` `Stepper`</sub> | `Keypad` → `Limit Sensing` → `Lift / Door Control` |
-| **04** | Mission Computer Safety SoC<br><sub>`MicroBlaze` `Verilog` `AXI4-Lite`</sub> | `Heartbeat / Fault` → **Safety Controller IP** → `Output Isolation`<br><sub>4-state FSM · SAFE_MODE Latch · Manual Recovery</sub> |
-| **05** | [AXI4-Lite Vending Machine](https://github.com/pkt-gif/custom-vending-machine)<br><sub>`Verilog` `FSM` `Vivado`</sub> | `Order` → `AXI Master` → `Stock / Dispense`<br><sub>5-channel Handshake · Basys 3 UI</sub> |
-| **06** | [Smart Fish Tank](https://github.com/pkt-gif/Smart-fish-tank)<br><sub>`ATmega128A` `ADC` `I²C`</sub> | `ADC Difference` → `Relative Turbidity` → `LCD / RGB LED` |
-
-<p align="center">
-  <a href="https://www.youtube.com/watch?v=AVxfVoIqJPs">Lift Demo ▶</a> ·
-  <a href="https://www.youtube.com/watch?v=7eshwTPMTOo">Vending Demo ▶</a> ·
-  <a href="https://www.youtube.com/watch?v=u2zzdcHJl2s">Fish Tank Demo ▶</a>
-</p>
+| **05 · [AXI4-Lite Vending Machine](https://github.com/pkt-gif/custom-vending-machine)**<br><sub>FPGA RTL · TEAM</sub> | **06 · Mission Computer Safety SoC**<br><sub>HW/SW CO-DESIGN · TEAM</sub> |
+|:---|:---|
+| [![AXI4-Lite vending machine demo](https://img.youtube.com/vi/7eshwTPMTOo/hqdefault.jpg)](https://www.youtube.com/watch?v=7eshwTPMTOo) | <img src="./assets/mission-soc-cover.svg" alt="Mission Computer Safety SoC architecture cover" width="100%"> |
+| **FLOW**<br>`Order` → `AXI Master FSM` → `Stock / Dispense` | **FLOW**<br>`Heartbeat / Fault` → `Safety FSM` → `Output Isolation` |
+| **MY PART**<br>`AXI Master` · `5-channel Handshake` · `Board UI` | **MY IP**<br>`4-state FSM` · `SAFE_MODE Latch` · `Manual Recovery` |
+| `Basys 3` `Verilog` `AXI4-Lite` `Vivado` | `MicroBlaze` `Verilog` `AXI4-Lite` `Vitis` |
+| [Repository ↗](https://github.com/pkt-gif/custom-vending-machine) · [Demo ▶](https://www.youtube.com/watch?v=7eshwTPMTOo) | `Safety Controller IP` · `Educational Prototype` |
 
 ---
 
