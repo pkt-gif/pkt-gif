@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="430" viewBox="0 0 1200 430" role="img" aria-labelledby="title desc">
+  <title id="title">Mission SoC hardware safety path</title>
+  <desc id="desc">Heartbeat Monitor, Fault Manager, and Safety Controller form a two-clock hardware safety path while MicroBlaze handles control and observation.</desc>
+
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#061716"/>
+      <stop offset="0.58" stop-color="#0A2421"/>
+      <stop offset="1" stop-color="#0D302C"/>
+    </linearGradient>
+    <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M30 0H0V30" fill="none" stroke="#5EEAD4" stroke-opacity="0.045"/>
+    </pattern>
+    <linearGradient id="safe" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#2DD4BF"/>
+      <stop offset="1" stop-color="#5EEAD4"/>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0 0L10 5L0 10Z" fill="#5EEAD4"/>
+    </marker>
+  </defs>
+
+  <rect width="1200" height="430" rx="26" fill="url(#bg)"/>
+  <rect width="1200" height="430" rx="26" fill="url(#grid)"/>
+
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">
+    <text x="52" y="44" fill="#5EEAD4" font-size="15" font-weight="700" letter-spacing="2.6">01 / MISSION SOC</text>
+    <text x="52" y="83" fill="#F0FDFA" font-size="30" font-weight="800" letter-spacing="0.8">HARDWARE SAFETY PATH</text>
+    <text x="52" y="110" fill="#94A3B8" font-size="14" letter-spacing="0.5">CPU-independent fault response · MicroBlaze control and observation</text>
+
+    <rect x="916" y="40" width="232" height="38" rx="19" fill="#0F766E" fill-opacity="0.32" stroke="#5EEAD4" stroke-opacity="0.65"/>
+    <text x="1032" y="64" text-anchor="middle" fill="#99F6E4" font-size="13" font-weight="700" letter-spacing="1.1">CORE PATH · 2 CLK</text>
+
+    <g>
+      <rect x="52" y="152" width="220" height="132" rx="18" fill="#082825" stroke="#2DD4BF" stroke-width="2"/>
+      <text x="74" y="180" fill="#5EEAD4" font-size="12" font-weight="700" letter-spacing="1.8">SENSE</text>
+      <text x="74" y="218" fill="#F0FDFA" font-size="21" font-weight="800">HEARTBEAT</text>
+      <text x="74" y="244" fill="#F0FDFA" font-size="21" font-weight="800">MONITOR</text>
+      <text x="74" y="268" fill="#94A3B8" font-size="12">timeout[2:0]</text>
+
+      <path d="M272 218H320" fill="none" stroke="#5EEAD4" stroke-width="2" marker-end="url(#arrow)"/>
+
+      <rect x="326" y="152" width="220" height="132" rx="18" fill="#2B2110" stroke="#F59E0B" stroke-width="2"/>
+      <text x="348" y="180" fill="#FBBF24" font-size="12" font-weight="700" letter-spacing="1.8">DECIDE</text>
+      <text x="348" y="218" fill="#FFF7ED" font-size="21" font-weight="800">FAULT</text>
+      <text x="348" y="244" fill="#FFF7ED" font-size="21" font-weight="800">MANAGER</text>
+      <text x="348" y="268" fill="#B8A58B" font-size="12">level · device · code</text>
+
+      <path d="M546 218H594" fill="none" stroke="#5EEAD4" stroke-width="2" marker-end="url(#arrow)"/>
+
+      <rect x="600" y="142" width="252" height="152" rx="20" fill="#30171C" stroke="#FB7185" stroke-width="2.5"/>
+      <rect x="618" y="158" width="72" height="24" rx="12" fill="#BE123C" fill-opacity="0.45"/>
+      <text x="654" y="175" text-anchor="middle" fill="#FECDD3" font-size="11" font-weight="700">MY IP</text>
+      <text x="622" y="216" fill="#FFF1F2" font-size="21" font-weight="800">SAFETY</text>
+      <text x="622" y="242" fill="#FFF1F2" font-size="21" font-weight="800">CONTROLLER</text>
+      <text x="622" y="270" fill="#FDA4AF" font-size="12">FSM · Recovery · Output Gate</text>
+
+      <path d="M852 218H900" fill="none" stroke="#5EEAD4" stroke-width="2" marker-end="url(#arrow)"/>
+
+      <rect x="906" y="152" width="242" height="132" rx="18" fill="#082825" stroke="url(#safe)" stroke-width="2"/>
+      <text x="928" y="180" fill="#5EEAD4" font-size="12" font-weight="700" letter-spacing="1.8">SAFE OUTPUT</text>
+      <text x="928" y="230" fill="#F0FDFA" font-size="38" font-weight="800">111 → 000</text>
+      <text x="928" y="266" fill="#94A3B8" font-size="12">selective or full isolation</text>
+    </g>
+
+    <rect x="52" y="330" width="1096" height="62" rx="15" fill="#071F1D" stroke="#2DD4BF" stroke-opacity="0.28"/>
+    <text x="74" y="356" fill="#64748B" font-size="11" font-weight="700" letter-spacing="1.6">CONTROL &amp; OBSERVE</text>
+    <text x="74" y="379" fill="#CBD5E1" font-size="14" font-weight="700">MicroBlaze V</text>
+    <text x="247" y="379" fill="#2DD4BF" font-size="18">→</text>
+    <text x="288" y="379" fill="#CBD5E1" font-size="14" font-weight="700">AXI4-Lite / IRQ</text>
+    <text x="474" y="379" fill="#2DD4BF" font-size="18">→</text>
+    <text x="516" y="379" fill="#CBD5E1" font-size="14" font-weight="700">Vitis Firmware</text>
+    <text x="694" y="379" fill="#2DD4BF" font-size="18">→</text>
+    <text x="736" y="379" fill="#CBD5E1" font-size="14" font-weight="700">UART Dashboard</text>
+
+    <circle cx="1118" cy="361" r="5" fill="#5EEAD4" filter="url(#glow)"/>
+    <circle cx="1138" cy="361" r="5" fill="#2DD4BF" opacity="0.55"/>
+  </g>
+</svg>
