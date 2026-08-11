@@ -27,11 +27,11 @@ MicroBlaze 기반 SoC와 Edge AI까지 HW/SW 경계를 확장하고 있습니다
 
 | 01 · CORE | 02 · CONNECT | 03 · EXTEND |
 |:---|:---|:---|
-| **MCU Firmware**<br>`C` · `STM32F411/F446` · `ATmega128A` · `HAL` | **Real-time & Interfaces**<br>`FreeRTOS` · `Task/Mutex` · `FSM` · `CAN` · `UART` · `I2C` | **FPGA SoC & Edge AI**<br>`Verilog` · `MicroBlaze` · `AXI4-Lite/Stream` · `YOLO11n` · `NCNN` |
+| **MCU Firmware**<br>`C` · `STM32F411/F446` · `ATmega128A` · `HAL` | **Real-time & Interfaces**<br>`FreeRTOS` · `Task/Mutex` · `FSM` · `CAN` · `UART` · `I2C` | **FPGA SoC & Edge AI**<br>`Verilog` · `MicroBlaze` · `AXI4-Lite` · `YOLO11n` · `NCNN` |
 
 ```text
 MCU │ Sensors       → Task / FSM → CAN / UART → Motor / Display
-SoC │ Fault / Stream → Custom IP → AXI / IRQ  → MicroBlaze / Vitis
+SoC │ Fault / State  → Custom IP → AXI / IRQ  → MicroBlaze / Vitis
 ```
 
 **How I build** — Task·상태·메시지의 경계를 먼저 정의하고, 센서–판단–구동의 흐름을 실제 하드웨어에서 끝까지 검증합니다.
@@ -55,24 +55,9 @@ SoC │ Fault / Stream → Custom IP → AXI / IRQ  → MicroBlaze / Vitis
 
 <sub>Public repository and demo · preparing</sub>
 
-### 02 · Fault-Aware 3-Channel Ultrasonic Approach-Risk SoC
-
-`3인 팀` · `Completed 2026.08.10` · `Basys 3` · `MicroBlaze` · `Verilog HDL` · `AXI4-Stream` · `AXI Timer/FIFO`
-
-좌·중앙·우 초음파 채널의 거리 변화와 응답 타당성을 하드웨어에서 분석하고, 이상 채널을 격리해 `NORMAL / DEGRADED / FAIL-SAFE`로 전환하는 MicroBlaze 기반 SoC를 구현했습니다.
-
-- **My IP — Sensor Health & Risk** — 채널별 `Timeout / Range / Jump / Stale` 검사와 Fault/Recovery FSM 구현
-- **Data Path** — 3채널 TDM 측정 → 128-bit AXI4-Stream → 움직임 추정 → 위험도·상태 판정 경로 구현
-- **Fault Strategy** — 서로 다른 방향의 센서를 다수결로 처리하지 않고, 채널별 Plausibility Check와 `UNKNOWN` 격리 정책 적용
-- **Integration** — Fault Injection Register, MicroBlaze IRQ/UART, 제한 운용과 Fail-Safe 시나리오 통합·검증
-
-<sub>Public repository and demo · preparing</sub>
-
----
-
 ## Embedded & Edge AI Projects
 
-### 03 · [Object-Detecting Autonomous Taxi](https://github.com/pkt-gif/object-detecting-autonomous-taxi)
+### 02 · [Object-Detecting Autonomous Taxi](https://github.com/pkt-gif/object-detecting-autonomous-taxi)
 
 `3인 팀` · `STM32F446RE` · `FreeRTOS` · `CAN` · `Raspberry Pi 4` · `YOLO11n/NCNN`
 
@@ -84,7 +69,7 @@ Raspberry Pi 4의 객체 탐지 결과와 STM32의 초음파 센서 데이터를
 
 [Repository](https://github.com/pkt-gif/object-detecting-autonomous-taxi) · [Demo](https://www.youtube.com/watch?v=wJaPBZJurDA)
 
-### 04 · [FreeRTOS Autonomous Robotaxi](https://github.com/pkt-gif/robotaxi)
+### 03 · [FreeRTOS Autonomous Robotaxi](https://github.com/pkt-gif/robotaxi)
 
 `개인 프로젝트` · `STM32F411RE` · `FreeRTOS` · `UART` · `PWM` · `HC-SR04`
 
@@ -96,7 +81,7 @@ Raspberry Pi 4의 객체 탐지 결과와 STM32의 초음파 센서 데이터를
 
 [Repository](https://github.com/pkt-gif/robotaxi) · [Demo](https://www.youtube.com/shorts/1cFvFcStp3M) · [Autonomous Drive](https://www.youtube.com/shorts/8N2YOQ3bM_4)
 
-### 05 · [AXI4-Lite Custom Vending Machine](https://github.com/pkt-gif/custom-vending-machine)
+### 04 · [AXI4-Lite Custom Vending Machine](https://github.com/pkt-gif/custom-vending-machine)
 
 `4인 팀` · `Basys 3` · `Verilog HDL` · `Vivado` · `AXI4-Lite` · `FSM`
 
@@ -139,5 +124,4 @@ TODO before publishing:
 1. 가천대학교 학적 상태(졸업/수료/중퇴 등)를 확인해 Education 문구에 명시합니다.
 2. 공개 포트폴리오 PDF URL이 준비되면 상단에 Portfolio 배지를 추가합니다.
 3. Mission SoC 저장소·시연 링크가 준비되면 01 프로젝트에 연결합니다.
-4. 3채널 초음파 SoC 저장소·시연 링크가 준비되면 02 프로젝트에 연결합니다.
 -->
