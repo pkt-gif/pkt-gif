@@ -48,11 +48,11 @@
 
 | **05 · [AXI4-Lite Vending Machine](https://github.com/pkt-gif/custom-vending-machine)**<br><sub>FPGA RTL · TEAM</sub> | **06 · Mission Computer Safety SoC**<br><sub>HW/SW CO-DESIGN · TEAM</sub> |
 |:---|:---|
-| [![AXI4-Lite vending machine demo](https://img.youtube.com/vi/7eshwTPMTOo/hqdefault.jpg)](https://www.youtube.com/watch?v=7eshwTPMTOo) | <img src="./assets/mission-soc-cover.svg" alt="Mission Computer Safety SoC architecture cover" width="100%"> |
+| [![AXI4-Lite vending machine demo](https://img.youtube.com/vi/7eshwTPMTOo/hqdefault.jpg)](https://www.youtube.com/watch?v=7eshwTPMTOo) | [![Mission Computer Safety SoC demo](https://img.youtube.com/vi/G8UkcHLjhrM/hqdefault.jpg)](https://www.youtube.com/watch?v=G8UkcHLjhrM) |
 | **FLOW**<br>`Order` → `AXI Master FSM` → `Stock / Dispense` | **FLOW**<br>`Heartbeat / Fault` → `Safety FSM` → `Output Isolation` |
 | **MY PART**<br>`AXI Master` · `5-channel Handshake` · `Board UI` | **MY IP**<br>`4-state FSM` · `SAFE_MODE Latch` · `Manual Recovery` |
 | `Basys 3` `Verilog` `AXI4-Lite` `Vivado` | `MicroBlaze` `Verilog` `AXI4-Lite` `Vitis` |
-| [Repository ↗](https://github.com/pkt-gif/custom-vending-machine) · [Demo ▶](https://www.youtube.com/watch?v=7eshwTPMTOo) | `Safety Controller IP` · `Educational Prototype` |
+| [Repository ↗](https://github.com/pkt-gif/custom-vending-machine) · [Demo ▶](https://www.youtube.com/watch?v=7eshwTPMTOo) | [Demo ▶](https://www.youtube.com/watch?v=G8UkcHLjhrM) · `Safety Controller IP` |
 
 ---
 
