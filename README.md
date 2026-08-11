@@ -100,7 +100,7 @@ STM32·FreeRTOS를 중심으로 Task/FSM과 통신·제어 로직을 설계하�
 
 ---
 
-### 03 · Mission Computer Fault-Response SoC
+### 03 · [Mission Computer Fault-Response SoC](https://github.com/pkt-gif/mission-computer-fault-response-soc)
 
 `TEAM` · `HW/SW CO-DESIGN` · `EDUCATIONAL PROTOTYPE`
 
@@ -119,7 +119,7 @@ STM32·FreeRTOS를 중심으로 Task/FSM과 통신·제어 로직을 설계하�
   </tr>
   <tr>
     <td><strong>TECH STACK</strong></td>
-    <td><code>Basys 3</code> <code>MicroBlaze</code> <code>Verilog HDL</code> <code>Vivado</code> <code>AXI4-Lite</code> <code>AXI INTC/UARTLite/GPIO</code> <code>Vitis C</code> <code>Python/PySide6</code></td>
+    <td><code>Basys 3</code> <code>MicroBlaze V</code> <code>Verilog HDL</code> <code>Vivado</code> <code>AXI4-Lite</code> <code>AXI INTC/UARTLite/GPIO</code> <code>Vitis C</code> <code>Python/PySide6</code></td>
   </tr>
   <tr>
     <td><strong>MY ROLE</strong></td>
@@ -131,7 +131,7 @@ STM32·FreeRTOS를 중심으로 Task/FSM과 통신·제어 로직을 설계하�
   </tr>
 </table>
 
-<p align="center"><a href="https://www.youtube.com/watch?v=G8UkcHLjhrM">Demo ▶</a></p>
+<p align="center"><a href="https://github.com/pkt-gif/mission-computer-fault-response-soc">Repository ↗</a> · <a href="https://www.youtube.com/watch?v=G8UkcHLjhrM">Demo ▶</a></p>
 
 ---
 
