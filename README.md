@@ -266,7 +266,7 @@ STM32·FreeRTOS를 중심으로 Task/FSM과 통신·제어 로직을 설계하�
   <img src="https://img.shields.io/badge/MicroBlaze_V-18212F?style=for-the-badge&logo=amd&logoColor=white" height="40" alt="MicroBlaze V" title="MicroBlaze V">
 </p>
 
-`AXI4-Lite` · `Custom IP` · `Interrupt / W1C` · `XSim`
+`AXI4-Lite` · `Custom IP` · `Interrupt / W1C`
 
 ### Edge AI & Vision
 
@@ -284,13 +284,9 @@ STM32·FreeRTOS를 중심으로 Task/FSM과 통신·제어 로직을 설계하�
 
 <p>
   <img src="https://skillicons.dev/icons?i=git,github" height="40" alt="Git and GitHub" title="Git and GitHub">
-  &nbsp;
-  <img src="https://img.shields.io/badge/Pytest-0A9EDC?style=for-the-badge&logo=pytest&logoColor=white" height="40" alt="Pytest" title="Pytest">
-  &nbsp;
-  <img src="https://img.shields.io/badge/XSim-334155?style=for-the-badge&logo=amd&logoColor=white" height="40" alt="XSim" title="XSim">
 </p>
 
-`Self-checking Testbench` · `Reference Model` · `Git Workflow`
+`Self-checking Testbench` · `Waveform Analysis` · `Hardware Integration`
 
 ## Education & Qualifications
 
