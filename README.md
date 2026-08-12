@@ -240,10 +240,57 @@ STM32·FreeRTOS를 중심으로 Task/FSM과 통신·제어 로직을 설계하�
 
 ---
 
-## Toolbox
+## Engineering Toolkit
 
-`C` · `Python` · `STM32 HAL` · `FreeRTOS` · `CAN` · `UART` · `I²C` · `PWM` · `ADC` · `GPIO/EXTI`<br>
-`Verilog HDL` · `Vivado` · `Vitis` · `MicroBlaze` · `AXI4-Lite` · `OpenCV` · `YOLO11n` · `NCNN`
+### Core Firmware
+
+<p>
+  <img src="https://skillicons.dev/icons?i=c" height="40" alt="C" title="C">
+  &nbsp;
+  <img src="https://img.shields.io/badge/STM32-03234B?style=for-the-badge&logo=stmicroelectronics&logoColor=white" height="40" alt="STM32" title="STM32">
+  &nbsp;
+  <img src="https://img.shields.io/badge/FreeRTOS-2B2F77?style=for-the-badge&logo=freertos&logoColor=white" height="40" alt="FreeRTOS" title="FreeRTOS">
+</p>
+
+`HAL` · `FSM` · `Task / Mutex` · `CAN` · `UART` · `I²C` · `ADC` · `PWM` · `GPIO / EXTI`
+
+### FPGA & SoC
+
+<p>
+  <img src="https://img.shields.io/badge/Verilog-6E4C9A?style=for-the-badge&logoColor=white" height="40" alt="Verilog HDL" title="Verilog HDL">
+  &nbsp;
+  <img src="https://img.shields.io/badge/Vivado-E01F27?style=for-the-badge&logo=amd&logoColor=white" height="40" alt="Vivado" title="Vivado">
+  &nbsp;
+  <img src="https://img.shields.io/badge/Vitis-E01F27?style=for-the-badge&logo=amd&logoColor=white" height="40" alt="Vitis" title="Vitis">
+  &nbsp;
+  <img src="https://img.shields.io/badge/MicroBlaze_V-18212F?style=for-the-badge&logo=amd&logoColor=white" height="40" alt="MicroBlaze V" title="MicroBlaze V">
+</p>
+
+`AXI4-Lite` · `Custom IP` · `Interrupt / W1C` · `XSim`
+
+### Edge AI & Vision
+
+<p>
+  <img src="https://skillicons.dev/icons?i=python" height="40" alt="Python" title="Python">
+  &nbsp;
+  <img src="https://img.shields.io/badge/OpenCV-5C3EE8?style=for-the-badge&logo=opencv&logoColor=white" height="40" alt="OpenCV" title="OpenCV">
+  &nbsp;
+  <img src="https://img.shields.io/badge/Raspberry_Pi-A22846?style=for-the-badge&logo=raspberrypi&logoColor=white" height="40" alt="Raspberry Pi" title="Raspberry Pi">
+</p>
+
+`YOLO11n` · `NCNN` · `SocketCAN`
+
+### Tools & Verification
+
+<p>
+  <img src="https://skillicons.dev/icons?i=git,github" height="40" alt="Git and GitHub" title="Git and GitHub">
+  &nbsp;
+  <img src="https://img.shields.io/badge/Pytest-0A9EDC?style=for-the-badge&logo=pytest&logoColor=white" height="40" alt="Pytest" title="Pytest">
+  &nbsp;
+  <img src="https://img.shields.io/badge/XSim-334155?style=for-the-badge&logo=amd&logoColor=white" height="40" alt="XSim" title="XSim">
+</p>
+
+`Self-checking Testbench` · `Reference Model` · `Git Workflow`
 
 ## Education & Qualifications
 
